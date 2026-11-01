@@ -6,10 +6,16 @@ def get_book_text(file_path : str) -> str:
         return file_contents
 
 def main():
-    book = get_book_text("books/frankenstein.txt")
+    path_to_book = "books/frankenstein.txt"
+    print(f"""============ BOOKBOT ============
+Analyzing book found at {path_to_book}...""")
+    book = get_book_text(path_to_book)
+    print("----------- Word Count ----------")
     print(f"Found {get_num_words(book)} total words")
+    print("--------- Character Count -------")
     sorted_char = sorted(tuple(get_characters_count(book).items()), key=lambda x : x[1], reverse=True)
-    print(f"{sorted_char}")
-
+    for t in sorted_char:
+        if t[0].isalpha():
+            print(f"{t[0]} : {t[1]}")
 if __name__ == "__main__":
     main()
