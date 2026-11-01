@@ -16,6 +16,8 @@ Analyzing book found at {path_to_book}...""")
     sorted_char = sorted(tuple(get_characters_count(book).items()), key=lambda x : x[1], reverse=True)
     for t in sorted_char:
         if t[0].isalpha():
-            print(f"{t[0]} : {t[1]}")
+            print(f"{t[0]}: {t[1]}")
+    print("============= END ===============")
+
 if __name__ == "__main__":
     main()
