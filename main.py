@@ -8,7 +8,8 @@ def get_book_text(file_path : str) -> str:
 def main():
     book = get_book_text("books/frankenstein.txt")
     print(f"Found {get_num_words(book)} total words")
-    print(f"{get_characters_count(book)}")
+    sorted_char = sorted(tuple(get_characters_count(book).items()), key=lambda x : x[1], reverse=True)
+    print(f"{sorted_char}")
 
 if __name__ == "__main__":
     main()
