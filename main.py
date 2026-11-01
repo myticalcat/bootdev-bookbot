@@ -7,6 +7,9 @@ def get_book_text(file_path : str) -> str:
         return file_contents
 
 def main():
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     path_to_book = sys.argv[1]
     print(f"""============ BOOKBOT ============
 Analyzing book found at {path_to_book}...""")
